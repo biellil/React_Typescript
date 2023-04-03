@@ -1,10 +1,10 @@
 import React from 'react';
-import './styles.css';
+import{Title} from"./styles"
 
 export const Dashboard: React.FC = ()=> {
   return (
 
-    <h1>Olá Dashboard</h1>
+    <Title>Olá Dashboard</Title>
     )
 };
 
