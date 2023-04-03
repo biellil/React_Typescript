@@ -4,7 +4,7 @@ import{Title} from"./styles"
 export const Dashboard: React.FC = ()=> {
   return (
 
-    <Title>Olá Dashboard</Title>
+    <Title>Catálogo de repositórios do Github</Title>
     )
 };
 
