@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Title, Form, Repos } from"./styles"
+import { Title, Form, Repos ,Error} from"./styles"
 import logo from "../../assets/logo.svg";
 import { FiChevronRight } from 'react-icons/fi';
 import { api } from "../../services/api";
@@ -16,11 +16,21 @@ interface GithubRepository {
 export const Dashboard: React.FC = () => {
   const [repos, setRepos] = React.useState<GithubRepository[]>([]);
   const [newRepo, setNewRepo] = React.useState('');
+  const [inputError,setInputError] = React.useState('');
+
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>): void {
     setNewRepo(event.target.value);
   }
-  async function handleAddRepo (event:React.FormEvent<HTMLFormElement>): Promise<void>{
+
+  async function handleAddRepo (event:React.FormEvent<HTMLFormElement>):
+   Promise<void>{
     event.preventDefault();
+
+    if (!newRepo) {
+      setInputError('Informe o username/repositório');
+      return;
+    }
+
     const response = await api.get<GithubRepository>(`repos/${newRepo}`)
     const repository = response.data
     
@@ -32,11 +42,14 @@ export const Dashboard: React.FC = () => {
     <>
     <img src = {logo} alt= "GitCollection"/>
     <Title>Catálogo de repositórios do Github</Title>
-    <Form onSubmit={handleAddRepo}>
-       <input placeholder="username/repository_name" 
+    <Form hasError={Boolean(inputError)} onSubmit={handleAddRepo}>
+       <input placeholder="username/repositório" 
          onChange={handleInputChange}/>
         <button type="submit">Buscar</button>
-    </Form>
+        
+    </Form  >
+
+    {inputError && <Error>{inputError}</Error>}
     
     <Repos>
        {repos.map(repository => (
