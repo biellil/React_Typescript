@@ -5,8 +5,6 @@ export const Repositorio: React.FC = ()=> {
   return (
     <>
   
-    
-    
     </>
   )
 };
