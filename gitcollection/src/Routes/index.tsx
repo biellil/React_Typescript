@@ -5,10 +5,10 @@ import { Repositorio } from '../pages/Repo';
 
 export const routes: React.FC = ()=> {
   return (
-    <switch>
+    <Switch>
         <Route component={Dashboard} path ='/' exact/>
-        <Route component={Repositorio} path= "/Repositorio"/>
-        </switch>
+        <Route component={Repositorio} path="/repositories/:repository+" />
+        </Switch>
     )
 };
 

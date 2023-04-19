@@ -5,6 +5,7 @@ import logo from "../../assets/logo.svg";
 import { FiChevronRight } from 'react-icons/fi';
 import { api } from "../../services/api";
 
+
 interface GithubRepository {
   full_name: string;
   description: string;
@@ -64,23 +65,23 @@ export const Dashboard: React.FC = () => {
     {inputError && <Error>{inputError}</Error>}
     
     <Repos>
-       {repos.map(repository => (
-        <a href="/Repositorio" key={repository.full_name}>
-        <img
-          src={repository.owner.avatar_url}
-          alt={repository.owner.login}
-        />
-        <div>
-          <strong>{repository.full_name}</strong>
-          <p>{repository.description}</p>
-        </div>
-        <FiChevronRight size={20} />
-      </a>
-       ))}
+        {repos.map(repository => (
+  
+          <a href={`/repositories/${repository.full_name}`}
+            key={repository.full_name}
+          >
+            <img
+              src={repository.owner.avatar_url}
+              alt={repository.owner.login}
+            />
+            <div>
+              <strong>{repository.full_name}</strong>
+              <p>{repository.description}</p>
+            </div>
+            <FiChevronRight size={20} />
+          </a>
+        ))}
       </Repos>
     </>
-    );
+  );
 };
-
-
-
