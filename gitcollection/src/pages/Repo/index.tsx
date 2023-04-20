@@ -72,15 +72,15 @@ export const Repo: React.FC = () => {
           <ul>
             <li>
               <strong>{repository.stargazers_count}</strong>
-              <span>Stars</span>
+              <span>curtidas</span>
             </li>
             <li>
               <strong>{repository.forks_count}</strong>
-              <span>Forks</span>
+              <span>Bifurcações</span>
             </li>
             <li>
               <strong>{repository.open_issues_count}</strong>
-              <span>Issues abertas</span>
+              <span>Problemas</span>
             </li>
           </ul>
         </RepoInfo>
