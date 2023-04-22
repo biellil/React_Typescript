@@ -87,7 +87,7 @@ export const Repos = styled.div`
     }
     svg {
       margin-left: auto;
-      color:	#04d361;
+      color: #04d361;
     }
   }
 `;
