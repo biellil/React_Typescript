@@ -14,7 +14,7 @@ interface GithubRepository {
     avatar_url: string;
   };
 }
-export const Dashboard: React.FC = () => {
+ const Dashboard: React.FC = () => {
 
   const [repos, setRepos] = React.useState<GithubRepository[]>(()=> {
     const storageRepos = localStorage.getItem('@GitCollection:repositories');
@@ -95,3 +95,5 @@ export const Dashboard: React.FC = () => {
     </>
   );
 };
+
+export default Dashboard;
