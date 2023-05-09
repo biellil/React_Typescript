@@ -10,6 +10,7 @@ const PreLoader1: React.FC = () => {
   
     <SweetLoading>
       <OverrideClipLoader size='' color='' />
+      
     </SweetLoading>
   
     </>
