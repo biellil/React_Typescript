@@ -10,11 +10,11 @@ export const SweetLoading = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  
 `;
 
 export const OverrideClipLoader = styled(ClipLoader)`
   border-color: green;
-  color: #123abc; 
   width: 150px; 
   height: 150px;
 `;

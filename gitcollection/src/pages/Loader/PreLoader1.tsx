@@ -6,10 +6,11 @@ const PreLoader1: React.FC = () => {
 
   return (
     <>
-      <img src={logo} alt="GitCollection" />
+    
   
     <SweetLoading>
-      <OverrideClipLoader size='' color='' />
+    <img src={logo} alt="GitCollection" />
+      <OverrideClipLoader size='150px' color='' />
       
     </SweetLoading>
   
