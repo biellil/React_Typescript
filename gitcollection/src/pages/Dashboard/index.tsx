@@ -61,6 +61,7 @@ interface GithubRepository {
   }
 
   return (
+   
     <>
     <img src = {logo} alt= "GitCollection"/>
     <Title>Catálogo de repositórios do Github</Title>
@@ -93,6 +94,7 @@ interface GithubRepository {
         ))}
       </Repos>
     </>
+   
   );
 };
 

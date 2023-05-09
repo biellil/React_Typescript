@@ -4,6 +4,7 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { Header, RepoInfo, Issues } from './styles';
 import logo from '../../assets/logo.svg';
 import {api} from '../../services/api';
+import PreLoader1 from '../Loader/PreLoader1';
 
 interface RepositoryParams {
   repository: string;
@@ -49,6 +50,7 @@ interface GithubIssue {
   
 
   return (
+    <React.Suspense fallback={< PreLoader1/>}>
     <>
       <Header>
         <img src={logo} alt="GitCollection" />
@@ -98,6 +100,7 @@ interface GithubIssue {
         ))}
       </Issues>
     </>
+    </React.Suspense>
   );
 };
 export default Repo;
