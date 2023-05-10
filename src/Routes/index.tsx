@@ -4,9 +4,16 @@ import PreLoader1 from '../pages/Loader/PreLoader1';
 //import { Dashboard } from '../pages/Dashboard';
 //import { Repo } from '../pages/Repo';
 //const PreLoader1 = React.lazy(() => import('../pages/Loader/PreLoader1'));
-const Dashboard = React.lazy(() => import('../pages/Dashboard'));
-const Repo = React.lazy(() => import('../pages/Repo'));
-
+const Dashboard = React.lazy(() => import( 
+    /* webpackPrefetch: true */
+    /* webpackPreload: true  */
+    /*webpackChunkName: "dashboard" */ '../pages/Dashboard'),
+);
+const Repo = React.lazy(() => import(
+  /* webpackPrefetch: true */
+  /* webpackPreload: true  */
+  /* webpackChunkName: "repo" */ '../pages/Repo'),
+);
 
 export const routes: React.FC = ()=> {
   return (
